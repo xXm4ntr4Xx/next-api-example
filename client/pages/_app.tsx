@@ -1,16 +1,15 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app';
-import {ApiContext} from '../context/apiContext'
+import {ApiContextprovider} from '../context/apiContext'
 
 
 function MyApp({ Component, pageProps }: AppProps) {
-  
-
-
   return (
-    <ApiContext.Provider value={'context'}>
-      <Component {...pageProps} />
-  </ApiContext.Provider>
+    
+      <ApiContextprovider>
+        <Component {...pageProps} />
+      </ApiContextprovider>
+    
   )
 }
 
